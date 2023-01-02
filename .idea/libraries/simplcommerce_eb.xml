@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="simplcommerce-eb">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SimplCommerce/aws-beanstalk/simplcommerce-eb.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
