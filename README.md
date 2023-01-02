@@ -4,31 +4,62 @@
 This is a repository for assignment 3 of the Software Quality Engineering course at the [Ben-Gurion University](https://in.bgu.ac.il/), Israel.
 
 ## Assignment Description
-In this assignment, we tested an open-source software called [$$*TODO* software name$$](https://address-of-the-project.com).
+In this assignment, we tested an open-source software called SimplCommerce (https://www.simplcommerce.com/).
 
-$$*TODO* Add some general description about the software$$
+A simple, cross platform, modularized ecommerce system built on .NET Core.
 
 ## Installation
-$$*TODO* Write instructions on how to install the software and prepare the testing environment$$
+
+## Visual Studio 2022 and SQL Server
+
+#### Prerequisites
+
+- SQL Server
+- Visual Studio 2022
+
+#### Steps to run
+
+- Update the connection string in appsettings.json in SimplCommerce.WebHost
+- Build the whole solution.
+- In Solution Explorer, make sure that SimplCommerce.WebHost is selected as the Startup Project
+- Open the Package Manager Console Window and make sure that SimplCommerce.WebHost is selected as the Default project. Then type "Update-Database" then press "Enter". This action will create the database schema.
+- In Visual Studio, press "Control + F5".
+- The back-office can be accessed via /Admin using the following built-in account: admin@simplcommerce.com, 1qazZAQ!
+
+## Mac/Linux with PostgreSQL
+
+#### Prerequisite
+
+- PostgreSQL
+- [.NET Core SDK 6.0](https://www.microsoft.com/net/download/all)
+- Entity Framework Core (`dotnet tool install --global dotnet-ef`)
+
+#### Steps to run
+
+- Update the connection string in appsettings.json in SimplCommerce.WebHost.
+- Run the simpl-build.sh file by issuing the following command: "sudo ./simpl-build.sh". For ubuntu 18: "sudo bash simpl-build.sh"
+- In the terminal, navigate to "src/SimplCommerce.WebHost" and type "dotnet run" and then hit "Enter".
+- Open http://localhost:5000 in the browser. The back-office can be accessed via /Admin using the following built-in account: admin@simplcommerce.com, 1qazZAQ!
+
 
 ## What we tested
-$$*TODO* Add a description of the module and the user stories that you chose to test.
-For example, in the case of the Moodle example, you can write something like this:
 
-We tested the quiz module that allows for creating and taking quizzes. We chose to test the following user stories: 
+We tested the cart module, in which a client can add products to his cart, see their prices, and purchase them.
 
-*User story:* A teacher adds a new quiz to the course with two yes/no questions
+We chose to test the following user stories: 
 
-*Preconditions:* There is a course with a teacher
+*User story:* A client adds a product to his cart.
 
-*Expected outcome:* The quiz is added to the course.
+*Preconditions:* There is a store with a product.
 
-*User story:* A students attempts a quiz and answers correctly.
+*Expected outcome:*  The product is added to the cart.
 
-*Preconditions:* There is a course with a quiz with two yes/no questions and the quiz grade is calculated automatically and the grade is visible to the students upon submission.
+*User story:* A seller changes the product's price.
 
-*Expected outcome:* The student receives 100.
-$$
+*Preconditions:* There is a store with a product, and the seller has permission to change the product's price. The price is visible to the clients.
+
+*Expected outcome:*  The product's price in the client's cart has changed.
+
 
 ## How we tested
 We used two different testing methods:
