@@ -48,17 +48,17 @@ We tested the cart module, in which a client can add products to his cart, see t
 
 We chose to test the following user stories: 
 
-*User story:* A client adds a product to his cart.
+*User story:* A client adds a review to a product.
 
 *Preconditions:* There is a store with a product.
 
-*Expected outcome:*  The product is added to the cart.
+*Expected outcome:*  The a review is added to the product.
 
-*User story:* A seller changes the product's price.
+*User story:* A seller deletes the product.
 
-*Preconditions:* There is a store with a product, and the seller has permission to change the product's price. The price is visible to the clients.
+*Preconditions:* There is a store with a product, and the seller has permission to delete the product.
 
-*Expected outcome:*  The product's price in the client's cart has changed.
+*Expected outcome:*  The product was deleted.
 
 
 ## How we tested
