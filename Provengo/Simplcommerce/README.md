@@ -10,7 +10,7 @@ Provnego project for spec-ing and testing my system.
 
 * README.md This file.
 * [config](config) Configuration files and administrative data.
-    * [provengo.yml](config/provengo.yml) Main Configuration file
+    * [provengo.yml](config/Provengo.yml) Main Configuration file
     * [hooks](config/hooks) Hook scripts (pre/post/...)
 * [spec](spec) The code creating the specification space lives here. Organized by language.
     * [js](spec/js) JavaScript files
