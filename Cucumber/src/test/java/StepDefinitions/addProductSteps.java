@@ -53,6 +53,7 @@ public class addProductSteps {
     @And("admim fills product's name")
     public void admin_fills_products_name() {
         driver.findElement(By.name("name")).sendKeys("Iphone 100!");
+        driver.findElement(By.name("price")).sendKeys("1");
     }
     @When("admin clicks save")
     public void admin_clicks_save() {

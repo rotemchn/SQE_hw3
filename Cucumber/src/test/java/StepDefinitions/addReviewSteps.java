@@ -1,9 +1,10 @@
 package test.java.StepDefinitions;
 
-import io.cucumber.java.en.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -47,17 +48,20 @@ public class addReviewSteps {
         driver.findElement(By.xpath("//button[normalize-space()='Add to cart']")).click();
         driver.findElement(By.xpath("//a[normalize-space()='View cart']")).click();
         driver.findElement(By.xpath("//a[normalize-space()='Process to Checkout']")).click();
-        driver.findElement(By.xpath("(//input[@name='ShippingAddressId'])[3]")).click();
+
+        //driver.findElement(By.xpath("(//input[@name='ShippingAddressId'])[3]")).click();
+        driver.findElement(By.name("NewAddressForm.ContactName")).sendKeys("Rotem");
+        driver.findElement(By.xpath("//select[@id='NewAddressForm_CountryId']//option[@value='US'][normalize-space()='United States']")).click();
+        driver.findElement(By.xpath("//select[@id='NewAddressForm_StateOrProvinceId']//option[@value='2']")).click();
+        driver.findElement(By.name("NewAddressForm.AddressLine1")).sendKeys("Rotem");
+        driver.findElement(By.name("NewAddressForm.Phone")).sendKeys("0544444444");
+
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-//        driver.findElement(By.name("NewAddressForm.ContactName")).sendKeys("Rotem");
-//        driver.findElement(By.xpath("//select[@id='NewAddressForm_CountryId']//option[@value='US'][normalize-space()='United States']")).click();
-//        driver.findElement(By.xpath("//select[@id='NewAddressForm_StateOrProvinceId']//option[@value='2']")).click();
-//        driver.findElement(By.name("NewAddressForm.AddressLine1")).sendKeys("Rotem");
-//        driver.findElement(By.name("NewAddressForm.Phone")).sendKeys("0544444444");
+
 
         driver.findElement(By.xpath("//button[normalize-space()='Payment']")).click();
         driver.findElement(By.xpath("//button[normalize-space()='Cash on Delivery']")).click();
@@ -72,10 +76,11 @@ public class addReviewSteps {
     @When("user enters a text in review box")
     public void user_enters_a_text_in_review_box() {
         System.out.println("Inside Step - user enters a text in review box");
-        driver.findElement(By.xpath("//div[@class='rating-container rating-xs rating-animate']//span[@class='filled-stars']")).click();
+        WebElement hiddenField = driver.findElement(By.id("Rating"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].value='5';", hiddenField);
         driver.findElement(By.name("Comment")).sendKeys("Great Iphone, didn't know there is an iphone 100!!\n nice to know!");
         driver.findElement(By.name("Title")).sendKeys("Great Iphone!");
-
     }
 
     @And("hits add")
