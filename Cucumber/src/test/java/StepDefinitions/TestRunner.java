@@ -1,15 +1,13 @@
 package test.java.StepDefinitions;
 
-import org.junit.runner.RunWith;
-
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(
-        features = "src\\test\\resources\\Features"
-)
+@CucumberOptions(features = {"Cucumber/src/test/resources/Features/deleteProductAndReview.feature"},plugin = "pretty")
 
 public class TestRunner {
 
 }
+

@@ -62,6 +62,7 @@ public class addProductSteps {
 
     @Then("product is added")
     public void product_is_added() {
-
+        driver.close();
+        driver.quit();
     }
 }

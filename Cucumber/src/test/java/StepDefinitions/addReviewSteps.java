@@ -13,7 +13,7 @@ public class addReviewSteps {
 
     WebDriver driver = null;
 
-    @Given("browser is open")
+    @Given("^browser is open$")
     public void browser_is_open() {
         System.out.println("Inside Step - browser is open");
         String projectPath = System.getProperty("user.dir");
@@ -26,7 +26,7 @@ public class addReviewSteps {
         // driver.manage().window().maximize();
     }
 
-    @And("user is logged in to simplCommerce")
+    @And("^user is logged in to simplCommerce$")
     public void user_is_logged_in_to_simpl_commerce() {
         System.out.println("Inside Step - user is logged in");
         driver.navigate().to("https://ci.simplcommerce.com/login");
@@ -36,13 +36,13 @@ public class addReviewSteps {
 
     }
 
-    @And("user is on a product's page")
+    @And("^user is on a product's page$")
     public void user_is_on_a_product_s_page() {
         System.out.println("Inside Step - user is on products page");
         driver.navigate().to("https://ci.simplcommerce.com/iphone-100!");
 
     }
-    @And("user purchases a product")
+    @And("^user purchases a product$")
     public void user_purchases_product() {
         //button[normalize-space()='Add to cart']
         driver.findElement(By.xpath("//button[normalize-space()='Add to cart']")).click();
@@ -68,12 +68,12 @@ public class addReviewSteps {
     }
 
 
-    @And("user clicks on Add Review")
+    @And("^user clicks on Add Review$")
     public void user_clicks_on_add_review() {
         driver.navigate().to("https://ci.simplcommerce.com/iphone-100!#addreview");
     }
 
-    @When("user enters a text in review box")
+    @When("^user enters a text in review box$")
     public void user_enters_a_text_in_review_box() {
         System.out.println("Inside Step - user enters a text in review box");
         WebElement hiddenField = driver.findElement(By.id("Rating"));
@@ -83,17 +83,17 @@ public class addReviewSteps {
         driver.findElement(By.name("Title")).sendKeys("Great Iphone!");
     }
 
-    @And("hits add")
+    @And("^hits add$")
     public void hits_add() {
         System.out.println("Inside Step - hits add");
         driver.findElement(By.xpath("//button[@id='btn-addreview']")).click();
     }
 
-    @Then("user's review is added to the product's reviews")
+    @Then("^user's review is added to the product's reviews$")
     public void user_s_review_is_added_to_the_product_s_reviews() {
         System.out.println("Inside Step - user's review is added to the product's reviews");
-//        driver.close();
-//        driver.quit();
+        driver.close();
+        driver.quit();
     }
 
 
