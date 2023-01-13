@@ -50,7 +50,7 @@ We chose to test the following user stories:
 
 *User story:* A client adds a review to a product.
 
-*Preconditions:* There is a store with a product.
+*Preconditions:* There is a store with a product which the client purchased.
 
 *Expected outcome:*  The a review is added to the product.
 
@@ -69,17 +69,20 @@ We used two different testing methods:
 Each of the testing methods is elaborated in its own directory. 
 
 ## Results
-Update all README.md files (except for d-e, see Section 1). Specifically, replace all $$*TODO*…$$ according to the instructions inside the $$.
 
 ## Detected Bugs
 We detected the following bugs:
 
 1. Bug 1: 
-   1. General description: ...
-   2. Steps to reproduce: ...
-   3. Expected result: ...
-   4. Actual result: ...
+   1. General description: when a client adds a review to a deleted product.
+   2. Steps to reproduce: a client buys a product, enters to "add review". Then, the seller deletes that product, but the buyer can still add his comment.
+   3. Expected result: The client won't be able to add his review, because the product was deleted.
+   4. Actual result: The adding action succeed.
    5. Link to the bug report: (you are encouraged to report the bug to the developers of the software)
 2. Bug 2: ...
+   1. General description: when a client buys a deleted product that is in his cart.
+   2. Steps to reproduce: a client adds a product to his cart. Then, the seller deletes that product, but the client can still purchase it.
+   3. Expected result: The client won't be able to add his review, because the product was deleted.
+   4. Actual result: The adding action succeed.
+   5. Link to the bug report: (you are encouraged to report the bug to the developers of the software)
 
-$$*TODO* if you did not detect the bug, you can delete this section$$  
