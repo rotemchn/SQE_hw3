@@ -28,7 +28,7 @@ provengo analyze -f PDF Simplcommerce
 provengo run --show-sessions Simplcommerce
 ```
 6. We repeated steps 4-5 until we were satisfied with the result.
-7. We recorded a video of the running tests and added it to the report. Since more than one browser session was opened, we recorded the entire screen. The link for the video is [a link](https://github.com/rotemchn/SQE_hw3/blob/main/Provengo/Provengo%20video.mp4)
+7. We recorded a video of the running tests and added it to the report. Since more than one browser session was opened, we recorded the entire screen. The link for the video is [here](https://github.com/rotemchn/SQE_hw3/blob/main/Provengo/Provengo%20video.mp4)
 8. We copied the generated graph of the model to a file named [model.pdf](model.pdf) inside this directory.
 
 ### Story files
