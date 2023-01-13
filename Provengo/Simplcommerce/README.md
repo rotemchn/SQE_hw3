@@ -11,10 +11,8 @@ Provnego project for spec-ing and testing my system.
 * README.md This file.
 * [config](config) Configuration files and administrative data.
     * [provengo.yml](config/Provengo.yml) Main Configuration file
-    * [hooks](config/hooks) Hook scripts (pre/post/...)
 * [spec](spec) The code creating the specification space lives here. Organized by language.
     * [js](spec/js) JavaScript files
-      * [hello-world.js](spec/js/hello-world.js) Initial model file.
 * [meta-spec](meta-spec) Code for working with the specification space
     * [ensemble-code.js](meta-spec/ensemble-code.js) Sample code for generating test optimized test suites (ensembles)
     * [book-writer.js](meta-spec/book-writer.js) Sample code for generating test books
@@ -22,7 +20,6 @@ Provnego project for spec-ing and testing my system.
 * [lib](lib) Place to store JavaScript libraries. Loaded first.
 * [data](data) Place to store data files. Loaded second (so you can use library code to in your data).
     * [data.js](data/data.js) Sample data file.
-* [products](products) Artifacts generated from the spec (such as run logs, scripts, and test-books) will be stored here. Much like `build` directories in other platforms, this directory can be ignored by version control systems (e.g. `git`).
 
 
 ## Useful Commands
